@@ -1,13 +1,30 @@
 # github地址, 头部导航右上角的github链接
 Github: 
   on: true
-  url: bamboo
+  url: https://github.com/yuang01/hexo-theme-bamboo
 
 # 网站logo
 logo: /medias/logo.png # 为空则不显示
 
 # 网站 favicon
 favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
+
+
+menu:
+  Home:
+    url: /
+    icon: fa fa-home
+  分类:
+    url: /categories/
+    icon: fas fa-folder-open
+    icon_color: # 标题字体颜色
+    title: 文章分类
+  标签:
+    icon: fas fa-tags
+    icon_color: 
+    title: 热门标签
+    url: /tags/
+
 
 # sidebar侧边栏
 sidebar:
@@ -18,7 +35,7 @@ sidebar:
       avatar: https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp
       shape: rectangle # circle, rectangle
       url: /about/
-      title: 青墨书晚风
+      title: 兼爱, 非攻
       subtitle: 知否
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif
@@ -55,7 +72,7 @@ sidebar:
         icon: fas fa-folder-open
         icon_color: # 标题字体颜色
         title: 文章分类
-        url: /blog/categories/
+        url: /categories/
     # ---------------------------------------
     # tagcloud widget
     side_tagcloud:
@@ -163,7 +180,7 @@ swiper:
   defaultImg: 'https://pic1.zhimg.com/v2-af3ccef61cf58b1a70765747cc1bbeac_b.jpg' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
-  defaultTile: '青墨书晚风' # 标题
+  defaultTile: '知否Python技术博客' # 标题
   defaultDesc: [] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
   defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
   defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
@@ -193,8 +210,8 @@ goTop:
 # 图片点击放大功能, http://fancyapps.com/fancybox/
 fancybox: 
   on: true
-  css: https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css
-  js:  https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js
+  css: /fancybox/fancybox.css
+  js:  /fancybox/fancybox.umd.js
 
 # 统计网站访问数量
 busuanzi:
@@ -529,9 +546,9 @@ tagDetail:
 
 # 分类页面，配置同上
 categories:
-  title: 'categories'
+  title: 'Python分类'
   img: 'https://pic2.zhimg.com/80/v2-7c496c95897fb15768593cc5170c8b1a_1440w.jpg?source=1940ef5c'
-  desc: '愿你如风，被人温柔以待'
+  desc: '兼爱非攻，被人温柔以待'
   full: false
   video: ''
   background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
