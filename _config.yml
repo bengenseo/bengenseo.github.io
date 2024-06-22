@@ -118,7 +118,7 @@ feed:
   path: atom.xml
   limit: 
   hub:
-  content:
-  content_limit: 
+  content: 
+  content_limit: 999999 #一定要填上限
   content_limit_delim: ' '
   order_by: -date

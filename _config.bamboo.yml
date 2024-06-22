@@ -28,11 +28,11 @@ sidebar:
         - icon: fas fa-rss
           url: /atom.xml
         - icon: fas fa-envelope
-          url: mailto:me@xxx.com
+          url: mailto:bengenseo@126.com
         - icon: fab fa-github
           url: https://github.com/yuang01/hexo-theme-bamboo
         - icon: fab fa-qq
-          url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=你的qq号码
+          url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=747995996
     # ---------------------------------------
     side_toc:
       on: true
