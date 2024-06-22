@@ -7,13 +7,13 @@ title: Hexo
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: 知否
 language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: https://blog.sjooo.sbs
 abbrlink:
   alg: crc32  # 算法，可选 crc16 和 crc32
   rep: hex    # 生成的链接形式，可选 dec 和 hex
@@ -113,11 +113,12 @@ search:
   field: post
 
 feed:
-  type: atom
+  #type: atom #中文乱码
+  type: rss2
   path: atom.xml
-  limit: 20
+  limit: 
   hub:
   content:
-  content_limit: 5000
+  content_limit: 
   content_limit_delim: ' '
   order_by: -date

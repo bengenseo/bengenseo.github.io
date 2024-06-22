@@ -1,112 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
-  
-  
-  <link href="http://example.com/atom.xml" rel="self"/>
-  
-  <link href="http://example.com/"/>
-  <updated>2024-06-22T05:04:15.784Z</updated>
-  <id>http://example.com/</id>
-  
-  <author>
-    <name>John Doe</name>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hexo</title>
+    <link>https://blog.sjooo.sbs/</link>
     
-  </author>
-  
-  <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>HEXO自动化部署到Github博客</title>
-    <link href="http://example.com/posts/d8bc67fb.html"/>
-    <id>http://example.com/posts/d8bc67fb.html</id>
-    <published>2024-06-22T04:30:02.768Z</published>
-    <updated>2024-06-22T05:04:15.784Z</updated>
+    <atom:link href="https://blog.sjooo.sbs/atom.xml" rel="self" type="application/rss+xml"/>
     
+    <description></description>
+    <pubDate>Sat, 22 Jun 2024 06:56:10 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
     
-      
+    <item>
+      <title>HEXO自动化部署到Github博客</title>
+      <link>https://blog.sjooo.sbs/posts/d8bc67fb.html</link>
+      <guid>https://blog.sjooo.sbs/posts/d8bc67fb.html</guid>
+      <pubDate>Sat, 22 Jun 2024 04:30:02 GMT</pubDate>
       
         
         
-    <summary type="html">&lt;h1 id=&quot;HEXO自动化部署到Github博客&quot;&gt;&lt;a href=&quot;#HEXO自动化部署到Github博客&quot; class=&quot;headerlink&quot; title=&quot;HEXO自动化部署到Github博客&quot;&gt;&lt;/a&gt;HEXO自动化部署到Github博客&lt;/h1&gt;&lt;h2 id=&quot;配置SSH&quot;&gt;&lt;a href=&quot;#配置SSH&quot; class=&quot;headerlink&quot; title=&quot;配置SSH&quot;&gt;&lt;/a&gt;配置SSH&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;quot;bengenseo&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -C &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;空值-三次回车&quot;&gt;&lt;a href=&quot;#空值-三次回车&quot; class=&quot;headerlink&quot; title=&quot;空值 三次回车&quot;&gt;&lt;/a&gt;空值 三次回车&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh -T git@github.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;输入-yes&quot;&gt;&lt;a href=&quot;#输入-yes&quot; class=&quot;headerlink&quot; title=&quot;输入 yes&quot;&gt;&lt;/a&gt;输入 yes&lt;/h3&gt;&lt;p&gt;Warning: Permanently added ‘github.com’ (ED25519) to the list of known hosts.&lt;br&gt;Hi bengenseo! You’ve successfully authenticated, but GitHub does not provide shell access.&lt;br&gt;警告：已将“github.com”（ED25519）永久添加到已知主机列表中。&lt;br&gt;嗨 bengenseo！您已成功通过身份验证，但 GitHub 不提供 shell 访问权限。&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulpfile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-clean-css&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-uglify&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-concat&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-cli -g&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;github下创建workflows文件夹&quot;&gt;&lt;a href=&quot;#github下创建workflows文件夹&quot; class=&quot;headerlink&quot; title=&quot;.github下创建workflows文件夹&quot;&gt;&lt;/a&gt;.github下创建workflows文件夹&lt;/h2&gt;&lt;h3 id=&quot;auto-yml&quot;&gt;&lt;a href=&quot;#auto-yml&quot; class=&quot;headerlink&quot; title=&quot;auto.yml&quot;&gt;&lt;/a&gt;auto.yml&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;name: 自动部署&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 当有改动推送到master分支时，启动Action&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;on:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  push:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    branches:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      #2020年10月后github新建仓库默认分支改为main，注意更改&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+          
+          
+      <description></description>
+          
         
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>自动化部署博客</title>
-    <link href="http://example.com/posts/1ecbfe90.html"/>
-    <id>http://example.com/posts/1ecbfe90.html</id>
-    <published>2024-06-21T19:47:09.947Z</published>
-    <updated>2024-06-22T04:35:18.190Z</updated>
-    
-    
       
+      
+      
+      
+      
+      <comments>https://blog.sjooo.sbs/posts/d8bc67fb.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>自动化部署博客</title>
+      <link>https://blog.sjooo.sbs/posts/1ecbfe90.html</link>
+      <guid>https://blog.sjooo.sbs/posts/1ecbfe90.html</guid>
+      <pubDate>Fri, 21 Jun 2024 19:47:09 GMT</pubDate>
       
         
         
-    <summary type="html">&lt;h1 id=&quot;自动化部署博客&quot;&gt;&lt;a href=&quot;#自动化部署博客&quot; class=&quot;headerlink&quot; title=&quot;自动化部署博客&quot;&gt;&lt;/a&gt;自动化部署博客&lt;/h1&gt;&lt;h2 id=&quot;配置SSH&quot;&gt;&lt;a href=&quot;#配置SSH&quot; class=&quot;headerlink&quot; title=&quot;配置SSH&quot;&gt;&lt;/a&gt;配置SSH&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.name &amp;quot;bengenseo&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git config --global user.email &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -C &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;空值-三次回车&quot;&gt;&lt;a href=&quot;#空值-三次回车&quot; class=&quot;headerlink&quot; title=&quot;空值 三次回车&quot;&gt;&lt;/a&gt;空值 三次回车&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh -T git@github.com&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h3 id=&quot;输入-yes&quot;&gt;&lt;a href=&quot;#输入-yes&quot; class=&quot;headerlink&quot; title=&quot;输入 yes&quot;&gt;&lt;/a&gt;输入 yes&lt;/h3&gt;&lt;p&gt;Warning: Permanently added ‘github.com’ (ED25519) to the list of known hosts.&lt;br&gt;Hi bengenseo! You’ve successfully authenticated, but GitHub does not provide shell access.&lt;br&gt;警告：已将“github.com”（ED25519）永久添加到已知主机列表中。&lt;br&gt;嗨 bengenseo！您已成功通过身份验证，但 GitHub 不提供 shell 访问权限。&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen -t rsa -b 4096 -C &amp;quot;bengenseo@126.com&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class=&quot;headerlink&quot; title=&quot;插件&quot;&gt;&lt;/a&gt;插件&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulpfile&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-clean-css&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-uglify&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install gulp-concat&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;github下创建workflows文件夹&quot;&gt;&lt;a href=&quot;#github下创建workflows文件夹&quot; class=&quot;headerlink&quot; title=&quot;.github下创建workflows文件夹&quot;&gt;&lt;/a&gt;.github下创建workflows文件夹&lt;/h2&gt;&lt;h3 id=&quot;auto-yml&quot;&gt;&lt;a href=&quot;#auto-yml&quot; class=&quot;headerlink&quot; title=&quot;auto.yml&quot;&gt;&lt;/a&gt;auto.yml&lt;/h3&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;name: 自动部署&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;# 当有改动推送到master分支时，启动Action&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;on:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  push:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    branches:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      #2020年10月后github新建仓库默认分支改为main，注意更改&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  release:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    types:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      - published&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+          
+          
+      <description></description>
+          
         
       
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>hello-world</title>
-    <link href="http://example.com/posts/4a17b156.html"/>
-    <id>http://example.com/posts/4a17b156.html</id>
-    <published>2024-06-21T18:03:53.202Z</published>
-    <updated>2024-06-22T04:35:18.189Z</updated>
-    
-    
       
+      
+      
+      
+      
+      <comments>https://blog.sjooo.sbs/posts/1ecbfe90.html#disqus_thread</comments>
+      
+    </item>
+    
+    <item>
+      <title>hello-world</title>
+      <link>https://blog.sjooo.sbs/posts/4a17b156.html</link>
+      <guid>https://blog.sjooo.sbs/posts/4a17b156.html</guid>
+      <pubDate>Fri, 21 Jun 2024 18:03:53 GMT</pubDate>
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a</summary>
+          
+          
+      <description></description>
+          
         
       
+      
+      
+      
+      
+      
+      <comments>https://blog.sjooo.sbs/posts/4a17b156.html#disqus_thread</comments>
+      
+    </item>
     
-    
-    
-    
-  </entry>
-  
-</feed>
+  </channel>
+</rss>

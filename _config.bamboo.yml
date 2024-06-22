@@ -1,7 +1,7 @@
 # github地址, 头部导航右上角的github链接
 Github: 
   on: true
-  url: hexo-theme-bamboo
+  url: bamboo
 
 # 网站logo
 logo: /medias/logo.png # 为空则不显示
@@ -19,7 +19,7 @@ sidebar:
       shape: rectangle # circle, rectangle
       url: /about/
       title: 青墨书晚风
-      subtitle: 我是副标题
+      subtitle: 知否
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif
       background: '#fff'
