@@ -4,10 +4,6 @@ title: HEXO自动化部署到Github博客
 ---
 # HEXO自动化部署到Github博客
 
-```
-
-$Rk*WwQa%Ob%2Zt@
-```
 ## 配置SSH
 
 ```
