@@ -1,0 +1,2 @@
+mkdir -p themes/*
+touch themes/*/.gitkeep
