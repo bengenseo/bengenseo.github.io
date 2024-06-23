@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+        <meta http-equiv="windows-Target" content="_top" />
+        <title></title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta property="og:type" content="webpage" />
+        <meta property="og:url" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:title" content="" />
+        <meta property="og:keywords" content="" />
+        <meta property="og:description" content="" />
+        <meta name="generator" content="Visual Studio Code" />
+        <meta name="authoer" content="冰洁SEO" />
+        <meta name="revised" content="冰洁, 时间年月日"/>
+        <meta name="copyright" content="本站版权 Www.bengenseo.com 冰洁个人博客所有 All Rights Reserved" />
+        <meta http-equiv="Cache-Control" content="no-transform" />
+        <link rel="canonical" href="强调路径" />
+        <link rel="stylesheet" href=""/>
+        <script>
+    // 获取 yiyan 数据
+    fetch('https://api.dzzui.com/api/yiyan?format=json')
+        .then(response => {
+            // 检查响应是否成功
+            if (!response.ok) {
+                throw new Error('网络响应失败');
+            }
+            // 将响应的JSON格式数据解析为JavaScript对象
+            return response.json();
+        })
+        .then(data => {
+            // 获取JSON对象中的文本数据
+            const text = data.text; // 假设返回的数据中包含一个"text"字段
+            console.log('获取的文本：', text);
+            
+            // 将文本数据设置到id为'yiyan'的HTML元素中
+            document.getElementById('yiyan').innerText = text;
+        })
+        .catch(error => {
+            console.error('获取数据时出错：', error);
+            
+            // 在出现错误时显示错误信息
+            document.getElementById('yiyan').innerText = '获取数据时出错';
+        });
+
+        </script>
+        <style>
+            img{
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav></nav>
+        </header>
+        <main>
+            <article>
+                <section>
+                    <img src="http://api.dzzui.com/api/dongmannv" alt="随机动漫图">
+                    <img src="https://api.dzzui.com/api/ip" alt="用户信息">
+                    <img src="https://api.dzzui.com/api/imgtaobao" alt="">
+                    <img src="https://api.dzzui.com/api/avatar" width="100%">
+                    <h2 id="yiyan"></h2>
+                    <h2 id="tiangou"></h2>
+                </section>
+            </article>
+            <aside>
+                
+            </aside>
+        </main>
+        <footer>
+            <address></address>
+        </footer>
+    </body>
+</html>
